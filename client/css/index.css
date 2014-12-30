@@ -1,0 +1,63 @@
+
+#cardstack {
+    position: absolute;
+    top: 0px;
+    left: 650px;
+    }
+
+.playercard {
+    border: 1px solid black;
+    background-color: white;
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    }
+
+.playercard p, .playercard h3 {
+   margin: 0.25em;
+ }
+
+ .shirt {
+     display: block;
+     float: left;
+     
+     font-size: 130%;
+     margin: 4px;
+ }
+    
+#paint {
+    /* margin: -350px 0 0 -350px;*/
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 640px;
+    height: 480px;
+    cursor: crosshair;
+    z-index: 1000;
+    }
+    
+#vid {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 640px;
+    height: 480px;
+    cursor: crosshair;
+    background: #333333;
+    }
+    
+#buttons {
+    position: absolute;
+    top: 500px; 
+    left: 0; 
+    width: 100%;
+    padding: 0 1em;
+    }
+    
+#saved_json {
+    font-size: 9px;
+    font-family: monospace;
+    height: 5em;
+    }

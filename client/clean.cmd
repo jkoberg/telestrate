@@ -1,0 +1,4 @@
+call scons -c
+pause
+
+

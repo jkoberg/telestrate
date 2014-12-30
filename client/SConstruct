@@ -1,0 +1,15 @@
+
+import os
+
+env = DefaultEnvironment(
+        tools = ['Coffeescript'],
+        ENV = dict(
+            PATH = os.environ['PATH'],
+            )
+        )
+
+env.SConscript(dirs=['js'], exports=['env'])
+
+
+
+

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Koberg Telestration Demo</title>
+        
+        <script data-main="js/index.js" src="js/require-jquery.js"></script>
+        <link href="css/index.css" rel="stylesheet" type="text/css" />
+        <link href="css/smoothness/jquery-ui-1.8.16.custom.css" type="text/css" rel="stylesheet" />	
+        <link href="css/jquery_mobile/jquery.mobile-1.0.min.css" rel="stylesheet" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+    </head>
+    <body>
+
+
+        <div data-role="page"  id="telestrate" data-theme="b">
+            <div data-role="content">
+                <video id="vid">
+                 <source src='DriscollMiddleSchoolTrickPlay.mp4' type='video/mp4'>
+                 <source src='Driscoll Middle School Trick Play.webm' type='video/webm'>
+                </video>
+ 
+                <div id="paint">&nbsp;</div>
+                <div id="buttons">
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button id="rewind_btn">Rewind</button>
+                        <button id="play_btn" ui-icon="play" >Play/Pause</button>
+                        <button id="jump_btn" data-icon="back" >Instant Replay</button>
+                        <button id="slomo_btn">Slo Mo</button>
+                        <button id="normalspeed_btn">Normal</button>
+
+                    </div>
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button id="save_sess_btn">Save Session</button>
+                        <button id="reset_btn" data-icon="refresh" >Reset</button>
+                        <button id="clear_frame_btn" >Clear</button>
+                    </div>
+                    <div data-role="fieldcontain" >
+                        <label for="urlentry">Video url:</label>
+                        <a data-role="button" id="newvid_ok" data-inline="true">Load</a>
+                        <input type="text" id='urlentry' name="urlentry" value="" />
+                    </div>
+                </div>
+                
+                <div id="cardstack" >
+                
+                    <div class="playercard" data-role="button" data-theme="e" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">02</span> Johnny Smith</h3>
+                      <p>Memphis, TN</p>
+                    </div>
+                    
+                    <div class="playercard" data-role="button" data-theme="b" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">33</span> Byron Phelps</h3>
+                      <p>Springfield, MO</p>
+                    </div>
+                    
+                    <div class="playercard" data-role="button" data-theme="a" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">13</span> Rick Brown</h3>
+                      <p>Alexandria, LA</p>
+                    </div>
+                    
+                    <div class="playercard" data-role="button" data-theme="c" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">89</span> Steve Marshall</h3>
+                      <p>Dallas, TX</p>
+                    </div>
+                    
+                    <div class="playercard" data-role="button" data-theme="c" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">21</span> Quincy Richards</h3>
+                      <p>Greenville, MS</p>
+                    </div>
+                    
+                    <div class="playercard" data-role="button" data-theme="c" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">45</span> Josh Owens</h3>
+                      <p>Houma, LA</p>
+                    </div>
+                    
+                    <div class="playercard" data-role="button" data-theme="c" data-iconpos="right" data-icon="plus">
+                      <h3><span class="shirt">11</span> Jason Robinson</h3>
+                      <p>Mobile, AL</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            
+        <div data-role="page"  id="save_confirmation" data-theme="b">
+            <p>Data has been saved.</p>
+            <a data-role="button" href="#telestrate" id="save_confirmation_close">Ok</a>
+        </div>
+        
+        <div data-role="page"  id="list_sessions" data-theme="b">
+            <div id="list_container">
+            </div>
+            <a data-role="button" href="#telestrate" id="save_confirmation_close">Ok</a>
+        </div>
+
+    </body>
+</html>
+

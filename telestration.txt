@@ -1,0 +1,100 @@
+Telestration events
+   Telestration started
+   Video is loaded
+   Video seek (and pause)
+   Video paused
+   Video unpaused
+   Stroke begins (at video time)
+   Stroke path data
+   Stroke ends
+   Annotation starts 
+   Annotation ends
+   Telestration ended
+
+Video navigator buttons
+   Play/pause
+   Back/Forward 5s / 10s / 15s / 20s
+   
+{ ts: 0.001234, x: 0.1234, y: 0.1236 }
+{ ts: 0.001234, x: 0.1234, y: 0.1236 }
+{ ts: 0.001234, x: 0.1234, y: 0.1236 }
+{ ts: 0.001234, x: 0.1234, y: 0.1236 }
+{ ts: 0.001234, x: 0.1234, y: 0.1236 }
+{ ts: 0.001234, x: 0.1234, y: 0.1236 }
+
+
+classes:
+Telestration Session Manager
+Video 
+Timed Path
+Timed Path Point
+Timed Path Recorder
+Timed Path Player
+Event List
+Event
+
+
+
+states:
+    LOADED
+    PLAYING
+    PAUSED
+    INSTANT REPLAY
+    SLO MO
+
+events:
+    load video $videoname
+    start playing video from point $time with rate $rate
+    pause video (leaving it at time $time)
+    add $points to path $pathkey at $time
+    show path $pathkey at $time
+    remove path $pathkey at $time
+    note $player(team_name, uniform_no) at $time, $coords
+
+
+instant_replay:
+    if state == INSTANT_REPLAY:
+        instant_start_time = vid.currentTime - 5.0
+    else:
+        instant_end_time = vid.currentTime
+        instant_start_time = instant_end_time - 5.0
+    vid.volume = 0.2
+    vid.currentTime = instant_start_time
+    vid.playback_rate = 0.5
+    state = INSTANT_REPLAY
+    queue_at(PLAYBACK_TIME, instant_end_time,
+        function(vid){
+            vid.playback_rate = 1.0;
+            vid.volume=1.0;
+            state = PLAYING;
+            })
+
+reset:
+    clear all paths
+    pause video
+    reset video to start
+    reset volume to 1.0
+    reset playback speed to 1.0
+
+
+
+
+user starts path while playing
+    Path will be shown during playback at whatever time
+    Path will be drawn in time with playback
+
+user pauses with path on screen
+    Path remains on screen
+
+user starts path while paused
+    Pause event will be inserted during playback
+    Path will be started and drawn in realtime
+    Video will hold with resume button lighted
+
+
+user resumes with paths started since pause
+    Paths started 
+
+user resumes with paths started before pause
+    Path continues to play
+

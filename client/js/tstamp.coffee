@@ -1,0 +1,6 @@
+
+
+define [], () ->
+    () -> new Date().getTime()
+    
+    

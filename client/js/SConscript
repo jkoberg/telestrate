@@ -1,0 +1,8 @@
+
+Import('env')
+
+coffee_files = env.Glob('*.coffee')
+
+js_files = env.Coffeescript(coffee_files)
+
+
